@@ -3,112 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arsip Regulasi — Indragiri Hulu</title>
+<title>SITELADAN — Sistem Informasi Teknik Legal Drafting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:            #16233F;
-    --ink-soft:       #2C3A5C;
-    --paper:          #F1EEE4;
-    --paper-card:     #FFFFFF;
-    --paper-line:     #DAD5C4;
-    --brass:          #9C7A2E;
-    --brass-soft:     #C9A65C;
-    --brass-tint:     #F4ECD7;
-    --seal-red:       #7C2E2E;
-    --text:           #1C1F26;
-    --text-muted:     #5B6270;
-    --radius:         10px;
-    --max-w:          860px;
+    --green-900:   #062E1B;
+    --green-800:   #0B4A2B;
+    --green-700:   #0F6B3E;
+    --green-600:   #14834D;
+    --green-tint:  #EAF4EE;
+    --paper:       #F6F9F7;
+    --card:        #FFFFFF;
+    --line:        #DCE9E0;
+    --gold:        #B8963C;
+    --gold-tint:   #F6EED9;
+    --maroon:      #7C2E2E;
+    --maroon-tint: #F5E9E9;
+    --text:        #10241A;
+    --text-muted:  #4E6459;
+    --on-green:    #F2F8F4;
+    --on-green-soft: rgba(242,248,244,.72);
+    --radius:      10px;
+    --max-w:       880px;
   }
 
   *{ box-sizing:border-box; }
-
   html{ scroll-behavior:smooth; }
 
   body{
     margin:0;
-    background:
-      radial-gradient(1200px 600px at 10% -10%, #FFFFFF 0%, transparent 60%),
-      var(--paper);
+    background:var(--paper);
     color:var(--text);
     font-family:'IBM Plex Sans', system-ui, sans-serif;
-    line-height:1.5;
+    line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
 
-  ::selection{ background:var(--brass-soft); color:var(--ink); }
-
+  ::selection{ background:var(--gold); color:var(--green-900); }
   a{ color:inherit; }
+  img{ max-width:100%; display:block; }
 
-  /* ---------- Header ---------- */
+  /* ---------- Hero ---------- */
 
-  header.masthead{
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(255,255,255,.06) 0%, transparent 60%),
+      linear-gradient(165deg, var(--green-700) 0%, var(--green-800) 45%, var(--green-900) 100%);
+    color:var(--on-green);
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1.4px);
+    background-size:22px 22px;
+    -webkit-mask-image:linear-gradient(to bottom, black, transparent 75%);
+            mask-image:linear-gradient(to bottom, black, transparent 75%);
+    opacity:.5;
+    pointer-events:none;
+  }
+
+  .hero-inner{
+    position:relative;
     max-width:var(--max-w);
     margin:0 auto;
-    padding:64px 24px 32px;
+    padding:64px 24px 52px;
+    text-align:center;
+  }
+
+  .crest{
+    width:104px;
+    height:auto;
+    margin:0 auto 22px;
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.35));
   }
 
   .eyebrow{
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
-    letter-spacing:.14em;
+    letter-spacing:.16em;
     text-transform:uppercase;
-    color:var(--brass);
-    margin-bottom:18px;
+    color:var(--gold);
+    margin-bottom:16px;
   }
-
-  .eyebrow::before{
+  .eyebrow::before, .eyebrow::after{
     content:"";
-    width:26px;
-    height:1px;
-    background:var(--brass);
+    width:22px; height:1px;
+    background:var(--gold);
     display:inline-block;
   }
 
   h1{
     font-family:'Source Serif 4', Georgia, serif;
     font-weight:700;
-    font-size:clamp(28px, 4.4vw, 42px);
-    line-height:1.14;
-    margin:0 0 14px;
-    color:var(--ink);
-    letter-spacing:-0.01em;
+    font-size:clamp(26px, 4.6vw, 40px);
+    line-height:1.16;
+    letter-spacing:.01em;
+    margin:0 0 16px;
+    color:#FFFFFF;
   }
 
-  .lede{
-    font-size:16px;
-    color:var(--text-muted);
-    max-width:56ch;
-    margin:0;
-  }
-
-  .masthead-rule{
-    max-width:var(--max-w);
+  .hero-subtitle{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:500;
+    font-size:clamp(12.5px, 2vw, 14.5px);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--on-green-soft);
+    max-width:52ch;
     margin:0 auto;
-    padding:0 24px;
-  }
-  .masthead-rule .line{
-    height:1px;
-    background:linear-gradient(to right, var(--ink) 0%, var(--ink) 40px, var(--paper-line) 40px);
   }
 
-  /* ---------- Group / dossier ---------- */
+  .hero-rule{
+    width:52px;
+    height:2px;
+    background:var(--gold);
+    margin:26px auto 0;
+    border-radius:2px;
+  }
+
+  /* ---------- Intro / about card ---------- */
 
   main{
     max-width:var(--max-w);
     margin:0 auto;
-    padding:40px 24px 100px;
+    padding:0 24px 100px;
   }
 
-  .group{
-    margin-bottom:56px;
+  .intro{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:30px 32px;
+    margin:-34px 0 52px;
+    box-shadow:0 18px 40px -24px rgba(6,46,27,.35);
   }
+
+  .intro-label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--green-700);
+    margin-bottom:12px;
+  }
+  .intro-label::before{
+    content:"";
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--gold);
+  }
+
+  .intro p{
+    margin:0;
+    font-size:15.5px;
+    color:var(--text-muted);
+    max-width:66ch;
+  }
+
+  .intro strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- Group / dossier ---------- */
+
+  .group{ margin-bottom:56px; }
 
   .group-head{
     display:flex;
@@ -123,7 +192,7 @@
     font-family:'Source Serif 4', Georgia, serif;
     font-weight:600;
     font-size:20px;
-    color:var(--ink);
+    color:var(--green-800);
   }
 
   .group-count{
@@ -141,59 +210,49 @@
 
   /* ---------- Timeline / ledger ---------- */
 
-  .ledger{
-    position:relative;
-    padding-left:34px;
-  }
+  .ledger{ position:relative; padding-left:34px; }
 
   .ledger::before{
     content:"";
     position:absolute;
-    left:9px;
-    top:6px;
-    bottom:6px;
+    left:9px; top:6px; bottom:6px;
     width:1.5px;
-    background:linear-gradient(to bottom, var(--brass-soft), var(--paper-line) 90%);
+    background:linear-gradient(to bottom, var(--gold), var(--line) 90%);
   }
 
-  .entry{
-    position:relative;
-    margin-bottom:18px;
-  }
+  .entry{ position:relative; margin-bottom:18px; }
   .entry:last-child{ margin-bottom:0; }
 
   .pin{
     position:absolute;
-    left:-34px;
-    top:24px;
-    width:19px;
-    height:19px;
+    left:-34px; top:24px;
+    width:19px; height:19px;
     border-radius:50%;
-    background:var(--paper-card);
-    border:2px solid var(--brass);
+    background:var(--card);
+    border:2px solid var(--gold);
     box-shadow:0 0 0 4px var(--paper);
   }
-  .entry.is-base .pin{
-    background:var(--brass);
-  }
+  .entry.is-base .pin{ background:var(--gold); }
+
+  /* ---------- Card ---------- */
 
   .card{
     display:block;
     text-decoration:none;
     color:inherit;
-    background:var(--paper-card);
-    border:1px solid var(--paper-line);
+    background:var(--card);
+    border:1px solid var(--line);
     border-radius:var(--radius);
     padding:20px 22px;
     transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
   }
 
   .card:hover, .card:focus-visible{
-    border-color:var(--brass-soft);
-    box-shadow:0 8px 22px -12px rgba(22,35,63,.28);
+    border-color:var(--green-600);
+    box-shadow:0 8px 22px -12px rgba(6,46,27,.28);
     transform:translateY(-1px);
   }
-  .card:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }
+  .card:focus-visible{ outline:2px solid var(--green-800); outline-offset:2px; }
 
   .card-top{
     display:flex;
@@ -211,20 +270,22 @@
     text-transform:uppercase;
     padding:3px 9px;
     border-radius:100px;
-    border:1px solid currentColor;
   }
-  .tag.base{ color:var(--brass); background:var(--brass-tint); border-color:transparent; }
-  .tag.amend{ color:var(--seal-red); background:#F5E9E9; border-color:transparent; }
+  .tag.base{  color:var(--gold);      background:var(--gold-tint); }
+  .tag.amend{ color:var(--maroon);    background:var(--maroon-tint); }
+  .tag.guide{ color:var(--green-700); background:var(--green-tint); }
+  .tag.template{ color:var(--maroon); background:var(--maroon-tint); }
 
   .file-icon{
     flex:0 0 auto;
     width:36px; height:36px;
     border-radius:8px;
-    background:var(--ink);
+    background:var(--green-800);
     display:flex;
     align-items:center;
     justify-content:center;
   }
+  .file-icon.doc{ background:var(--maroon); }
   .file-icon svg{ width:16px; height:16px; }
 
   .card-title{
@@ -232,7 +293,7 @@
     font-weight:600;
     font-size:16.5px;
     line-height:1.35;
-    color:var(--ink);
+    color:var(--green-800);
     margin:2px 0 6px;
   }
 
@@ -252,7 +313,7 @@
     gap:12px;
     margin-top:16px;
     padding-top:14px;
-    border-top:1px dashed var(--paper-line);
+    border-top:1px dashed var(--line);
   }
 
   .filename{
@@ -263,11 +324,7 @@
     max-width:60%;
   }
 
-  .actions{
-    display:flex;
-    gap:8px;
-    flex-shrink:0;
-  }
+  .actions{ display:flex; gap:8px; flex-shrink:0; }
 
   .btn{
     display:inline-flex;
@@ -279,36 +336,27 @@
     padding:7px 12px;
     border-radius:7px;
     text-decoration:none;
-    border:1px solid var(--paper-line);
-    color:var(--ink);
+    border:1px solid var(--line);
+    color:var(--green-800);
     background:var(--paper);
     transition:background .15s ease, color .15s ease, border-color .15s ease;
   }
   .btn svg{ width:13px; height:13px; }
 
   .btn.primary{
-    background:var(--ink);
-    color:#F1EEE4;
-    border-color:var(--ink);
+    background:var(--green-800);
+    color:#FFFFFF;
+    border-color:var(--green-800);
   }
-  .btn.primary:hover{ background:var(--ink-soft); }
+  .btn.primary:hover{ background:var(--green-900); }
   .btn:not(.primary):hover{
-    border-color:var(--brass);
-    color:var(--brass);
+    border-color:var(--gold);
+    color:var(--gold);
   }
 
   /* ---------- Simple stack (non-chronological groups) ---------- */
 
-  .stack{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-
-  .tag.guide{ color:var(--ink-soft); background:#E8EAF0; border-color:transparent; }
-  .tag.template{ color:var(--seal-red); background:#F5E9E9; border-color:transparent; }
-
-  .file-icon.doc{ background:var(--seal-red); }
+  .stack{ display:flex; flex-direction:column; gap:14px; }
 
   /* ---------- Footer ---------- */
 
@@ -326,15 +374,16 @@
   footer::before{
     content:"";
     width:26px; height:1px;
-    background:var(--paper-line);
+    background:var(--line);
   }
 
   /* ---------- Responsive ---------- */
 
   @media (max-width:560px){
-    header.masthead{ padding:44px 18px 26px; }
-    main{ padding:30px 18px 80px; }
-    .masthead-rule{ padding:0 18px; }
+    .hero-inner{ padding:48px 18px 44px; }
+    .crest{ width:84px; }
+    main{ padding:0 18px 80px; }
+    .intro{ padding:24px 20px; margin-top:-26px; }
     .ledger{ padding-left:26px; }
     .pin{ left:-26px; width:16px; height:16px; top:22px; }
     .card{ padding:16px 16px; }
@@ -347,15 +396,23 @@
 </head>
 <body>
 
-<header class="masthead">
-  <div class="eyebrow">Indeks Berkas</div>
-  <h1>Pembentukan Peraturan<br>Perundang-undangan</h1>
-  <p class="lede">Kumpulan naskah regulasi dan pedoman teknis, dikelompokkan per keluarga peraturan untuk memudahkan penelusuran.</p>
-</header>
-
-<div class="masthead-rule"><div class="line"></div></div>
+<div class="hero">
+  <div class="hero-inner">
+    <img class="crest" src="assets/logo-inhu.png" alt="Logo Pemerintah Kabupaten Indragiri Hulu">
+    <div class="eyebrow">SITELADAN</div>
+    <h1>Sistem Informasi Teknik<br>Legal Drafting</h1>
+    <p class="hero-subtitle">Sebagai Pedoman Teknis Penyusunan Sistematika<br>Rancangan Peraturan Bupati Indragiri Hulu</p>
+    <div class="hero-rule"></div>
+  </div>
+</div>
 
 <main>
+
+  <div class="intro">
+    <div class="intro-label">Tentang Legal Drafting</div>
+    <p><strong>Legal drafting</strong> adalah seni merangkai norma hukum ke dalam sebuah Rancangan Peraturan Perundang-undangan. Setiap susunan kata, struktur, dan format dirancang dengan penuh ketelitian agar membentuk naskah hukum yang utuh, harmonis, serta sesuai dengan kaidah pembentukan peraturan perundang-undangan.</p>
+  </div>
+
   <section class="group">
     <div class="group-head">
       <span class="group-title">UU 12/2011 — Pembentukan Peraturan Perundang-undangan</span>
@@ -372,7 +429,7 @@
           <div class="card-top">
             <span class="tag base">UU Induk · 2011</span>
             <span class="file-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </span>
           </div>
           <div class="card-title">Undang-Undang Nomor 12 Tahun 2011 tentang Pembentukan Peraturan Perundang-undangan</div>
@@ -400,7 +457,7 @@
           <div class="card-top">
             <span class="tag amend">Perubahan Pertama · 2019</span>
             <span class="file-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </span>
           </div>
           <div class="card-title">Undang-Undang Nomor 15 Tahun 2019 tentang Perubahan atas Undang-Undang Nomor 12 Tahun 2011</div>
@@ -428,7 +485,7 @@
           <div class="card-top">
             <span class="tag amend">Perubahan Kedua · 2022</span>
             <span class="file-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </span>
           </div>
           <div class="card-title">Undang-Undang Nomor 13 Tahun 2022 tentang Perubahan Kedua atas Undang-Undang Nomor 12 Tahun 2011</div>
@@ -466,7 +523,7 @@
         <div class="card-top">
           <span class="tag guide">Pedoman Teknis</span>
           <span class="file-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
           </span>
         </div>
         <div class="card-title">Pedoman Penyusunan Sistematika Rancangan Peraturan Bupati Indragiri Hulu</div>
@@ -491,7 +548,7 @@
         <div class="card-top">
           <span class="tag template">Template</span>
           <span class="file-icon doc" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
           </span>
         </div>
         <div class="card-title">Template Rancangan Peraturan Bupati Indragiri Hulu</div>
@@ -513,6 +570,7 @@
 
     </div>
   </section>
+
 </main>
 
 <footer>Total 5 berkas — susun berkas baru di folder yang sama dan tambahkan ke indeks ini.</footer>
