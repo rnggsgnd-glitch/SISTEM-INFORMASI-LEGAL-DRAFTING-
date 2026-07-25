@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arsip Regulasi — Pembentukan Peraturan Perundang-undangan</title>
+<title>Arsip Regulasi — Indragiri Hulu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -297,6 +297,19 @@
     color:var(--brass);
   }
 
+  /* ---------- Simple stack (non-chronological groups) ---------- */
+
+  .stack{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .tag.guide{ color:var(--ink-soft); background:#E8EAF0; border-color:transparent; }
+  .tag.template{ color:var(--seal-red); background:#F5E9E9; border-color:transparent; }
+
+  .file-icon.doc{ background:var(--seal-red); }
+
   /* ---------- Footer ---------- */
 
   footer{
@@ -337,7 +350,7 @@
 <header class="masthead">
   <div class="eyebrow">Indeks Berkas</div>
   <h1>Pembentukan Peraturan<br>Perundang-undangan</h1>
-  <p class="lede">Kumpulan naskah Undang-Undang Nomor 12 Tahun 2011 beserta perubahannya, disusun kronologis untuk memudahkan penelusuran.</p>
+  <p class="lede">Kumpulan naskah regulasi dan pedoman teknis, dikelompokkan per keluarga peraturan untuk memudahkan penelusuran.</p>
 </header>
 
 <div class="masthead-rule"><div class="line"></div></div>
@@ -438,9 +451,71 @@
 
     </div>
   </section>
+
+  <section class="group">
+    <div class="group-head">
+      <span class="group-title">Rancangan Peraturan Bupati Indragiri Hulu</span>
+      <span class="group-count">2 berkas</span>
+    </div>
+    <p class="group-sub">Pedoman teknis dan template kerja untuk penyusunan sistematika Rancangan Peraturan Bupati.</p>
+
+    <div class="stack">
+
+      <!-- Pedoman (PDF) -->
+      <a class="card" href="pdf/PEDOMAN_PENYUSUNAN_SISTEMATIKAN_RANCANGAN_PERATURAN_BUPATI_INDRAGIRI_HULU.pdf" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="tag guide">Pedoman Teknis</span>
+          <span class="file-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          </span>
+        </div>
+        <div class="card-title">Pedoman Penyusunan Sistematika Rancangan Peraturan Bupati Indragiri Hulu</div>
+        <div class="card-meta">
+          <span>PDF</span>
+          <span>537 KB</span>
+          <span>15 hlm.</span>
+        </div>
+        <div class="card-foot">
+          <span class="filename">pdf/PEDOMAN_PENYUSUNAN_SISTEMATIKAN_RANCANGAN_PERATURAN_BUPATI_INDRAGIRI_HULU.pdf</span>
+          <span class="actions">
+            <span class="btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+              Buka
+            </span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Template (DOC) -->
+      <a class="card" href="doc/Template_Rancangan_Peraturan_Bupati_Indragiri_Hulu.doc" download>
+        <div class="card-top">
+          <span class="tag template">Template</span>
+          <span class="file-icon doc" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F1EEE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          </span>
+        </div>
+        <div class="card-title">Template Rancangan Peraturan Bupati Indragiri Hulu</div>
+        <div class="card-meta">
+          <span>DOC</span>
+          <span>509 KB</span>
+          <span>3 hlm.</span>
+        </div>
+        <div class="card-foot">
+          <span class="filename">doc/Template_Rancangan_Peraturan_Bupati_Indragiri_Hulu.doc</span>
+          <span class="actions">
+            <span class="btn primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+              Unduh
+            </span>
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </section>
 </main>
 
-<footer>Total 3 berkas PDF — susun berkas baru di folder yang sama dan tambahkan ke indeks ini.</footer>
+<footer>Total 5 berkas — susun berkas baru di folder yang sama dan tambahkan ke indeks ini.</footer>
 
 </body>
 </html>
